@@ -27,11 +27,12 @@ def lambda_handler(event, context):
             <p>Mi nombre es Wilhelm Otzoy.</p>
             <div>
                 <h2>Mi Perfil</h2>
-                <p>Soy una persona entusiaste de las tecnologias, me gusta invovar y seguir aprendiendo cada dia mas</p>
+                <p>Soy una persona entusiasta de las tecnologias, me gusta invovar y seguir aprendiendo cada día más</p>
             </div>
             <div>
                 <h2>Mi Experiencia</h2>
-                <p>Mi experiencia en los ultimos 5 anios en DevOps, manejando AWS y Azure especialmente, pero en los ultimos meses me he estado sacando cursos de CiberSeguridad Cloud y la Nube huawei.</p>
+                <p>Mi experiencia en los ultimos 5 años en DevOps, manejando AWS y Azure, pero en los últimos meses me he estado sacando cursos de CiberSeguridad Cloud y Cursos de la Nube huawei.</p>
+                <p>Tengo 2 certificaciones Cloud una de AWS y una de Azure, tengo 2 certificaciones de Ciberseguridad con Prisma Cloud y 1 Otra de Sales NetSkope</p>
             </div>
         </body>
         </html>
