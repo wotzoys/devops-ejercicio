@@ -1,0 +1,28 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Transform: AWS::Serverless-2016-10-31
+Description: SAM Template for the DevOps
+Resources:
+  LambdaFunction:
+    Type: AWS::Serverless::Function
+    Properties:
+      CodeUri: .
+      Handler: api-publico.lambda_handler
+      FunctionName: api-publico
+      Runtime: python3.10
+      Events:
+        ApiGateway:
+          Type: HttpApi
+          Properties:
+            Path: /api-publico
+            Method: GET
+            ApiId: !Ref ApiGateway
+
+  ApiGateway:
+    Type: AWS::Serverless::HttpApi
+    Properties:
+      StageName: dev
+
+Outputs:
+  endpoint:
+    Description: 'API Gateway endpoint URL for the Lambda function'
+    Value: !Sub 'https://${ApiGateway}.execute-api.${AWS::Region}.amazonaws.com/dev/api-publico'
