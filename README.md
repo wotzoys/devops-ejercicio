@@ -9,9 +9,8 @@
 Primero realicé el Fork del repositorio según las instrucciones, dejando el mismo nombre del repositorio. 
 Clono mi repositorio creado anteriormente en mi equipo local, con los siguientes comandos. 
 
-```$ git clone https://github.com/wotzoys/devops-ejercicio.git```
-
-```$ cd devops-ejercicio```
+```sh $ git clone https://github.com/wotzoys/devops-ejercicio.git
+      $ cd devops-ejercicio```
 
 ## Paso 2
 Crear el codigo en AWS SAM dada la instrucción a utilizar. 
