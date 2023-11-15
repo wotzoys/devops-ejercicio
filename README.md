@@ -28,8 +28,8 @@ El siguiente diagrama detalla cuál es el flujo de trabajo segun las instruccion
 
 ## Paso 4 Diseño el flujo de Github Actions
 El codigo se encuentra en la ruta (https://github.com/wotzoys/devops-ejercicio/blob/main/.github/workflows/main.yml)
-
-`name: Deploy AWS SAM
+```
+name: Deploy AWS SAM
 on:
   push:
     branches:
@@ -61,11 +61,12 @@ jobs:
         --capabilities CAPABILITY_IAM \
         --no-confirm-changeset \
         --no-fail-on-empty-changeset
-        `
-   ## Paso 5 Diseño del Template para AWS SAM
-   ### El template.yaml crea una función Lambda y un API Gateway HTTP con un GET endpoint para /api-publico.
-  
-  ` AWSTemplateFormatVersion: '2010-09-09'
+```
+## Paso 5 Diseño del Template para AWS SAM
+### El template.yaml crea una función Lambda y un API Gateway HTTP con un GET endpoint para /api-publico.
+
+```  
+AWSTemplateFormatVersion: '2010-09-09'
 Transform: AWS::Serverless-2016-10-31
 Description: SAM Template for the DevOps
 Resources:
@@ -91,7 +92,7 @@ Outputs:
   endpoint:
     Description: 'API Gateway endpoint URL for the Lambda function'
     Value: !Sub 'https://${ApiGateway}.execute-api.${AWS::Region}.amazonaws.com/dev/api-publico'
-    `
+```
 ## Paso 6 Configuración de Credenciales del Repositorio de Github
 "Como el sistema de GitHub hace automáticamente todo el proceso de poner en marcha los procesos, es importante configurar unas 'keys' especiales en el espacio de trabajo de GitHub. Estas keys' son como claves secretas que ayudan a que todo funcione sin problemas."
 
