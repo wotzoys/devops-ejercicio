@@ -11,7 +11,8 @@ Clono mi repositorio creado anteriormente en mi equipo local, con los siguientes
 
 ```sh
 $ git clone https://github.com/wotzoys/devops-ejercicio.git
-$ cd devops-ejercicio```
+$ cd devops-ejercicio
+```
 
 ## Paso 2
 Crear el codigo en AWS SAM dada la instrucción a utilizar. 
