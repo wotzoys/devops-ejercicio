@@ -9,8 +9,9 @@
 Primero realicé el Fork del repositorio según las instrucciones, dejando el mismo nombre del repositorio. 
 Clono mi repositorio creado anteriormente en mi equipo local, con los siguientes comandos. 
 
-```$ git clone https://github.com/wotzoys/devops-ejercicio.git
-$ cd devops-ejercicio```
+```$ git clone https://github.com/wotzoys/devops-ejercicio.git```
+
+```$ cd devops-ejercicio```
 
 ## Paso 2
 Crear el codigo en AWS SAM dada la instrucción a utilizar. 
@@ -24,42 +25,4 @@ El siguiente diagrama detalla cuál es el flujo de trabajo segun las instruccion
 (https://github.com/wotzoys/devops-ejercicio/blob/main/AWS%20API%20HTTP.png)
 
 ##Diseño el flujo de Github Actions
-´name: Deploy AWS SAM
 
-on:
-  push:
-    branches:
-      - main
-
-jobs:
-  deploy:
-    runs-on: ubuntu-latest
-
-    steps:
-    - name: Checkout code
-      uses: actions/checkout@v3
-
-    - name: Setup AWS SAM CLI
-      uses: aws-actions/setup-sam@v2
-      with:
-        use-installer: true
-
-    - name: Configure AWS Credentials
-      uses: aws-actions/configure-aws-credentials@v2
-      with:
-        aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
-        aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-        aws-region: us-west-2
-
-    - name: Run SAM Build
-      run: sam build --use-container
-
-    - name: Run SAM Deploy
-      run: |
-        sam deploy \
-        --template-file template.yml \
-        --resolve-s3 \
-        --stack-name sam-stack \
-        --capabilities CAPABILITY_IAM \
-        --no-confirm-changeset \
-        --no-fail-on-empty-changeset´
